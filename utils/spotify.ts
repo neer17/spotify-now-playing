@@ -1,29 +1,29 @@
-import fetch from "isomorphic-unfetch";
-import { stringify } from "querystring";
+import fetch from 'isomorphic-unfetch';
+import { stringify } from 'querystring';
 
 const {
   SPOTIFY_CLIENT_ID: client_id,
   SPOTIFY_CLIENT_SECRET: client_secret,
-  SPOTIFY_REFRESH_TOKEN: refresh_token,
+  SPOTIFY_REFRESH_TOKEN: refresh_token
 } = process.env;
 
-const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
+const basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64');
 const Authorization = `Basic ${basic}`;
 
 async function getAuthorizationToken() {
-  const url = new URL("https://accounts.spotify.com/api/token");
+  const url = new URL('https://accounts.spotify.com/api/token');
   const body = stringify({
-    grant_type: "refresh_token",
-    refresh_token,
+    grant_type: 'refresh_token',
+    refresh_token
   });
   const response = await fetch(`${url}`, {
-    method: "POST",
+    method: 'POST',
     headers: {
       Authorization,
-      "Content-Type": "application/x-www-form-urlencoded",
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body,
-  }).then((r) => r.json());
+    body
+  }).then(r => r.json());
 
   return `Bearer ${response.access_token}`;
 }
@@ -33,8 +33,8 @@ export async function nowPlaying() {
   const Authorization = await getAuthorizationToken();
   const response = await fetch(NOW_PLAYING_ENDPOINT, {
     headers: {
-      Authorization,
-    },
+      Authorization
+    }
   });
   const { status } = response;
   if (status === 204) {

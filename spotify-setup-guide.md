@@ -1,17 +1,17 @@
 # Setup Guide
 
-Guide by [JoshLmao](https://github.com/JoshLmao)
+Guide by [JoshLmao](https://github.com/JoshLmao) & [Shiv Kumar](https://github.com/shiv-k-sharm) with some cherry on top
 
 ### Part 1: Vercel & Deploy
 
 Setup with a click of a button 😉
 
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/joshlmao/now-playing-profile)
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/shiv-k-sharma/spotify-now-playing)
 
 1. Sign up or Sign in to use [Vercel](https://vercel.com/) for hosting the repo. You could use another service like [Heroku](https://heroku.com/) but this guide will use Vercel
-2. Fork [natemoo-re's original repo](https://github.com/natemoo-re/natemoo-re), or [joshlmao's now-playing-profile repo](https://github.com/JoshLmao/now-playing-profile) which is just a skeleton repo that contains the Spotify Now Playing specific features
+2. Fork [natemoo-re's original repo](https://github.com/natemoo-re/natemoo-re), or [shiv's spotify-now-playing repo](https://github.com/shiv-k-sharma/spotify-now-playing) which is just a skeleton repo that contains the Spotify Now Playing specific features with added nice music bar.
 3. Go to your Vercel dashboard and select Import Project
-4. Paste the Git url of your forked repo. For example "https://github.com/JoshLmao/now-playing-profile"
+4. Paste the Git url of your forked repo. For example "https://github.com/shiv-k-sharma/spotify-now-playing"
    <img src="https://i.imgur.com/fkiH4QL.png" height="250">
 
 5. Leave the remaining settings for now and click 'Deploy'
@@ -59,14 +59,13 @@ Name: SPOTIFY_REFRESH_TOKEN
 Value: MY_REFRESH_TOKEN
 ```
 
-6. Once done, navigate to one of your deployment url's and place "/now-playing" at the end. For example, "https://now-playing-joshlmao.vercel.app/now-playing"
+6. Once done, navigate to one of your deployment url's and place "/now-playing" at the end. For example, "https://spotify-now-playing.shiv-k-sharma.vercel.app/now-playing"
 
 7. Replace "MY_VERCEL_DEPLOYMENT_URL" in the following code with one of your deployment url's and insert it into any ReadMe.md
 
 ```
-<a href="https://MY_VERCEL_DEPLOYMENT_URL/now-playing?open">
-    <img src="https://MY_VERCEL_DEPLOYMENT_URL/now-playing" width="256" height="64" alt="Now Playing">`
-</a>
+[![Spotify](https://MY_VERCEL_DEPLOYMENT_URL/now-playing)](https://MY_VERCEL_DEPLOYMENT_URL/now-playing?open)
+
 ```
 
 That's it! Below is an example of what it should look like. If you have any problems, make sure to re-read the instructions and follow them precisely!
